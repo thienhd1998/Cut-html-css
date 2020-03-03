@@ -94,6 +94,9 @@
     border-radius: 2px;
     display: none;
     animation: fadeIn ease-in 0.3s;
+    -webkit-animation: fadeIn ease-in 0.3s;
+    -o-animation: fadeIn ease-in 0.3s;
+    -moz-animation: fadeIn ease-in 0.3s;
 }
 
 .header__qr::before {
@@ -138,7 +141,35 @@
     cursor: default;
     transform-origin: calc(100% - 20px) top;
     animation: headerNotifyGrowth ease-in 0.25s;
+    -webkit-animation: headerNotifyGrowth ease-in 0.25s;
+    -o-animation: headerNotifyGrowth ease-in 0.25s;
+    -moz-animation: headerNotifyGrowth ease-in 0.25s;
+    will-change: opacity, transform;
     display: none;
+}
+
+.header__notify:hover {
+    display: block;
+}
+
+.header__notify::before {
+    content: "";
+    border-width: 20px 25px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 5px;
+    top: -30px;
+}
+
+.header__notify::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 90px;
+    height: 12px;
+    right: 0;
+    top: -12px;
 }
 
 @keyframes headerNotifyGrowth {
